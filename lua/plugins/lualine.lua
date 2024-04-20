@@ -7,6 +7,7 @@ return {
         dependencies = { 'nvim-tree/nvim-web-devicons' },
         component_separators = '|',
         section_separators = '',
+        -- theme = 'material-stealth'
       },
       sections = {
         lualine_a = { 'mode' },

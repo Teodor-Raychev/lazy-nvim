@@ -39,60 +39,78 @@
 --   },
 -- }
 -- return {
--- 	{
--- 		--"rose-pine/neovim",
--- 		"marko-cerovac/material.nvim",
--- 		lazy = false,
--- 		priority = 1000,
--- 		-- name = "material",
--- 		opts = {
--- 			transparent = true,
--- 			sidebars = "transparent",
--- 			floats = "transparent",
--- 		},
--- 		config = function()
--- 			local configs = require("material")
--- 			configs.setup({
--- 				disable = { background = true },
--- 				lualine_style = "stealth",
---
--- 			})		
--- 		end
--- 	},
--- 	{
--- 		"folke/LazyVim",
--- 		opts = {
--- 			colorscheme = "material",
--- 			floats = "transparent",
--- 		},
--- 	},
--- }
+--   {
+--     --"rose-pine/neovim",
+--     "marko-cerovac/material.nvim",
+--     lazy = false,
+--     priority = 1000,
+--     -- name = "material",
+--     opts = {
+--       transparent = true,
+--       sidebars = "transparent",
+--       floats = "transparent",
+--     },
+--     config = function()
+--       local configs = require("material")
+--       configs.setup({
+--         disable = { background = true },
+--         lualine_style = "stealth",
+--         lsp_virtual_text = true,
+--       })
+--     end
+--   },
+--   {
+--     "folke/LazyVim",
+--     opts = {
+--       colorscheme = "material",
+--       floats = "transparent",
+--     },
+--   },
 return {
-	{
-		"catppuccin/nvim",
-		lazy = false,
-		priority = 1000,
-		name = "catppuccin",
-		opts = {
-			transparent = true,
-			sidebars = "transparent",
-			floats = "transparent",
-		},
-		config = function()
-			local configs = require("catppuccin")
-			configs.setup({
-				flavour = "frappe", -- latte, frappe, macchiato, mocha
-				transparent_background = true,
+  {
+    "catppuccin/nvim",
+    lazy = false,
+    priority = 1000,
+    name = "catppuccin",
+    opts = {
+      transparent = true,
+      sidebars = "transparent",
+      floats = "transparent",
+    },
+    config = function()
+      local configs = require("catppuccin")
+      configs.setup({
+        flavour = "frappe", -- latte, frappe, macchiato, mocha
+        transparent_background = true,
 
-			})		
-		end
-	},
-	{
-		"folke/LazyVim",
-		opts = {
-			colorscheme = "catppuccin",
-		},
-	},
+      })
+    end
+  },
+  {
+    --"rose-pine/neovim",
+    "marko-cerovac/material.nvim",
+    lazy = false,
+    priority = 1000,
+    -- name = "material",
+    opts = {
+      transparent = true,
+      sidebars = "transparent",
+      floats = "transparent",
+    },
+    config = function()
+      local configs = require("material")
+      configs.setup({
+        disable = { background = true },
+        lualine_style = "stealth",
+        lsp_virtual_text = true,
+      })
+    end
+  },
+
+  {
+    "folke/LazyVim",
+    opts = {
+      colorscheme = "catppuccin",
+    },
+  },
 }
-
-
