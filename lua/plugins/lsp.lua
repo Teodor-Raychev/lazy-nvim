@@ -39,14 +39,6 @@ return {
 				opts = {},
 			},
 		},
-		---@class PluginLspOpts
-		opts = {
-			---@type lspconfig.options
-			servers = {
-				solargraph = {},
-				lua_ls = {},
-			},
-		},
 		config = function()
 			-- import lspconfig plugin
 			local lspconfig = require("lspconfig")

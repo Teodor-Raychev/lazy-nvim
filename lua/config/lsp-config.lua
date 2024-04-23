@@ -6,23 +6,10 @@ fidget.setup({})
 local cmp = require("cmp")
 
 cmp.setup({
-	-- sources = {
-	--   { name = 'nvim_lsp' },
-	--   { name = 'luasnip' },
-	--   { name = 'nvim_lsp_signature_help' },
-	-- },
-	-- mapping = {
-	--   ['<CR>'] = cmp.mapping.confirm({ select = false }),
-	-- },
 	window = {
 		completion = cmp.config.window.bordered(),
 		documentation = cmp.config.window.bordered(),
 	},
-	-- snippet = {
-	--   expand = function(args)
-	--     require('luasnip').lsp_expa:wnd(args.body)
-	--   end
-	-- }
 })
 
 -- override border colors

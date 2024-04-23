@@ -7,10 +7,13 @@ return {
 			events = { "BufWritePost", "BufReadPost", "InsertLeave" },
 			linters_by_ft = {
 				fish = { "fish" },
+        lua = { "lua" },
+        erb_lint = { "erb_lint" },
+        eslint = { "eslint"},
 				-- Use the "*" filetype to run linters on all filetypes.
-				-- ['*'] = { 'global linter' },
+			  -- ["*"] = { "global linter" },
 				-- Use the "_" filetype to run linters on filetypes that don't have other linters configured.
-				-- ['_'] = { 'fallback linter' },
+				-- ["_"] = { "fallback linter" },
 				-- ["*"] = { "typos" },
 			},
 			-- LazyVim extension to easily override linter options

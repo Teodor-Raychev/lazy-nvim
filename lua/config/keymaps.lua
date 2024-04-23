@@ -79,9 +79,9 @@ keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left
 -- Select All
 keymap.set("n", "<C-a>", "gg<S-v>G")
 -- higlight and copy word
-keymap.set("n", "<leader>h", "viw<leader>y")
+keymap.set("n", "<leader>h", "viw<leader>")
 -- higlight and copy whole block
-keymap.set("n", "<leader>H", "viW<leader>y")
+keymap.set("n", "<leader>H", "viw<leader>y")
 -- keymap.set("n", "viw", "C-w")
 -- Goto
 keymap.set({ "n", "v" }, "<leader>n", "g_")

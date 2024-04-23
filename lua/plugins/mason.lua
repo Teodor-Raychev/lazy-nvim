@@ -29,6 +29,7 @@ return {
 			ensure_installed = {
 				"solargraph",
 				"tsserver",
+				"rubocop",
 				"html",
 				"cssls",
 				"tailwindcss",
