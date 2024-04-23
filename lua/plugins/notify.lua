@@ -1,15 +1,15 @@
 return {
 	{
 		"rcarriga/nvim-notify",
-		keys = {
-			{
-				"<leader>un",
-				function()
-					require("notify").dismiss({ silent = true, pending = true })
-				end,
-				desc = "Dismiss All Notifications",
-			},
-		},
+		-- keys = {
+		-- 	{
+		-- 		"<leader>un",
+		-- 		function()
+		-- 			require("notify").dismiss({ silent = true, pending = true })
+		-- 		end,
+		-- 		desc = "Dismiss All Notifications",
+		-- 	},
+		-- },
 		config = function()
 			local notify = require("notify")
 			vim.opt.termguicolors = true

@@ -6,8 +6,7 @@ return {
 			-- Event to trigger linters
 			events = { "BufWritePost", "BufReadPost", "InsertLeave" },
 			linters_by_ft = {
-				fish = { "fish" },
-        lua = { "lua" },
+        luacheck = { "luacheck" },
         erb_lint = { "erb_lint" },
         eslint = { "eslint"},
 				-- Use the "*" filetype to run linters on all filetypes.

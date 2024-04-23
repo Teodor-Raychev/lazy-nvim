@@ -17,7 +17,6 @@ keymap.set("n", "<leader>sh", telescope.help_tags, { desc = "[S]earch [H]elp" })
 keymap.set("n", "<leader>sw", telescope.grep_string, { desc = "[S]earch current [W]ord" })
 keymap.set("n", "<leader>sg", telescope.live_grep, { desc = "[S]earch by [G]rep" })
 keymap.set("n", "<leader>sd", telescope.diagnostics, { desc = "[S]earch [D]iagnostics" })
-keymap.set("n", "<leader>sg", telescope.git_files, { desc = "[S]earch [Git]file" })
 -- You can pass additional configuration to telescope to change theme, layout, etc.
 keymap.set("n", "<leader>/", function()
 	require("telescope.builtins").current_buffer_fuzzy_find(telescope("telescope.themes").get_dropdown({
