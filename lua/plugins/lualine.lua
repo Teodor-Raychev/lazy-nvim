@@ -31,19 +31,4 @@ return {
       extensions = {}
     },
   },
-  -- {
-  --   'lukas-reineke/indent-blankline.nvim',
-  --   -- i don't think lazy will be able to guess
-  --   -- `ibl` is the main module, so set it manually
-  --   main = 'ibl',
-  --   opts = {
-  --     enabled = true,
-  --     scope = {
-  --       enabled = true,
-  --     },
-  --     indent = {
-  --       char = '▏',
-  --     },
-  --   }
-  -- }
 }

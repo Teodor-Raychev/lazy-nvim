@@ -3,8 +3,8 @@ local opt = vim.opt
 --Cursor
 opt.cursorline = true    -- Enable highlighting of the current line
 opt.termguicolors = true -- True color: support
-opt.pumblend = 30        -- Popup blend
-opt.winblend = 2
+opt.pumblend = 10        -- Popup blend
+opt.winblend = 0
 
 -- numbers
 opt.number = true
@@ -30,5 +30,3 @@ opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or 
 -- turn off swapfile
 opt.swapfile = false
 
---set modifiable
-vim.g.modifiable = true

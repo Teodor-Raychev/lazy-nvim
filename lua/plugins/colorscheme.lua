@@ -1,72 +1,13 @@
--- palenight theme
--- return {
---   "alexmozaidze/palenight.nvim",
---   lazy = false,
---   priority = 1000,
---   opts = {},
---   config = function()
---     vim.cmd([[colorscheme palenight]])
---   end,
--- }
-
--- return {
---   -- Theme NeoTokyo
---   "tokyonight.nvim",
---   lazy = true,
---   priority = 1000,
---   opts = {
---     transparent = true,
---     styles = {
---       sidebars = "transparent",
---       floats = "transparent",
---     },
---   },
---   config = function()
---     vim.cmd([[colorscheme tokyonight-storm]])
---   end,
--- }
--- return {
---   "folke/tokyonight.nvim",
---   lazy = false,
---   priority= 10000,
---   opts = {
---     transparent = true,
---     style = "storm",
---     styles = {
---       sidebars = "transparent",
---       floats = "transparent",
---     },
---   },
--- }
--- return {
---   {
---     --"rose-pine/neovim",
---     "marko-cerovac/material.nvim",
---     lazy = false,
---     priority = 1000,
---     -- name = "material",
---     opts = {
---       transparent = true,
---       sidebars = "transparent",
---       floats = "transparent",
---     },
---     config = function()
---       local configs = require("material")
---       configs.setup({
---         disable = { background = true },
---         lualine_style = "stealth",
---         lsp_virtual_text = true,
---       })
---     end
---   },
---   {
---     "folke/LazyVim",
---     opts = {
---       colorscheme = "material",
---       floats = "transparent",
---     },
---   },
 return {
+  -- {
+  -- -- Theme NeoTokyo
+  -- "tokyonight.nvim",
+  -- lazy = true,
+  -- priority = 1000,
+  -- opts = {
+  --
+  -- }
+  -- },
   {
     "catppuccin/nvim",
     lazy = false,
@@ -75,42 +16,34 @@ return {
     opts = {
       transparent = true,
       sidebars = "transparent",
+      transparent_background = true,
       floats = "transparent",
     },
     config = function()
       local configs = require("catppuccin")
       configs.setup({
-        flavour = "frappe", -- latte, frappe, macchiato, mocha
+        flavour = "mocha", -- latte, frappe, macchiato, mocha
         transparent_background = true,
-
+        integrations = {
+          cmp = true,
+          mason = false,
+          gitsigns = true,
+          nvimtree = true,
+          treesitter = true,
+          notify = false,
+          mini = {
+            enabled = true,
+            indentscope_color = "",
+          },
+          -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+        },
       })
     end
   },
-  {
-    --"rose-pine/neovim",
-    "marko-cerovac/material.nvim",
-    lazy = false,
-    priority = 1000,
-    -- name = "material",
-    opts = {
-      transparent = true,
-      sidebars = "transparent",
-      floats = "transparent",
-    },
-    config = function()
-      local configs = require("material")
-      configs.setup({
-        disable = { background = true },
-        lualine_style = "stealth",
-        lsp_virtual_text = true,
-      })
-    end
-  },
-
   {
     "folke/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
+       colorscheme = "catppuccin-mocha",
     },
   },
 }
