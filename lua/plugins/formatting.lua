@@ -7,7 +7,7 @@ return {
 		conform.setup({
 			formatters_by_ft = {
 				c = { "clang" },
-				ruby = { "rubocop" },
+				-- ruby = { "rubocop" },
 				javascript = { "prettier" },
 				typescript = { "prettier" },
 				javascriptreact = { "prettier" },

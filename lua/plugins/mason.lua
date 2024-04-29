@@ -27,9 +27,9 @@ return {
 		mason_lspconfig.setup({
 			-- list of servers for mason to install
 			ensure_installed = {
-				"solargraph",
+        -- "rubocop",
+        -- "solargraph",
 				"tsserver",
-				"rubocop",
 				"html",
 				"cssls",
 				"tailwindcss",
