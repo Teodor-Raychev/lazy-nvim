@@ -28,7 +28,7 @@ return {
 			-- list of servers for mason to install
 			ensure_installed = {
         -- "rubocop",
-        -- "solargraph",
+        "solargraph",
 				"tsserver",
 				"html",
 				"cssls",
