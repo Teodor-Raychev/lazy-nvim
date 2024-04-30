@@ -21,12 +21,36 @@ local handlers = {
 	["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" }),
 	["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" }),
 }
+-- TODO create a proper loop
 lspconfig.solargraph.setup({
 	handlers = handlers,
+})
+lspconfig.ruby_lsp.setup({
+  handlers = handlers,
 })
 lspconfig.lua_ls.setup({
 	handlers = handlers,
 })
+lspconfig.tsserver.setup({
+	handlers = handlers,
+})
+lspconfig.clangd.setup({
+	handlers = handlers,
+})
+
+-- include hbs limited support
+vim.cmd('autocmd BufRead,BufNewFile *.hbs set filetype=html')
+
+-- silent hover 
+local banned_messages = { "No information available" }
+vim.notify = function(msg, ...)
+  for _, banned in ipairs(banned_messages) do
+    if msg == banned then
+      return
+    end
+  end
+  return require("notify")(msg, ...)
+end
 
 -- Ruby
 -- For ruby each version must have ruby-lsp gem installed e.g. 3.3.0, 3.3.1 .. (gem install ruby-lsp)

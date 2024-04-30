@@ -5,7 +5,7 @@ return {
       options = {
         icons_enabled = true,
         dependencies = { 'nvim-tree/nvim-web-devicons' },
-        component_separators = '|',
+        component_separators = '•',
         section_separators = '',
         -- theme = 'material-stealth'
       },
