@@ -42,7 +42,12 @@ lspconfig.clangd.setup({
 vim.cmd('autocmd BufRead,BufNewFile *.hbs set filetype=html')
 
 -- silent hover 
-local banned_messages = { "No information available" }
+local banned_messages = {
+  "No information available",
+  "Welcome to LazyVim!",
+  [[ruby_ls is deprecated, use ruby_lsp instead.
+This feature will be removed in lspconfig version 0.2.0]],
+}
 vim.notify = function(msg, ...)
   for _, banned in ipairs(banned_messages) do
     if msg == banned then
