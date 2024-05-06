@@ -45,12 +45,11 @@ vim.cmd('autocmd BufRead,BufNewFile *.hbs set filetype=html')
 local banned_messages = {
   "No information available",
   "Welcome to LazyVim!",
-  [[ruby_ls is deprecated, use ruby_lsp instead.
-This feature will be removed in lspconfig version 0.2.0]],
+  "ruby_ls is deprecated, use ruby_lsp instead.",
 }
 vim.notify = function(msg, ...)
   for _, banned in ipairs(banned_messages) do
-    if msg == banned then
+    if msg:find(banned) then
       return
     end
   end
