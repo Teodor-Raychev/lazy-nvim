@@ -1,12 +1,6 @@
 return {
   {
     "JoosepAlviste/palenightfall.nvim",
-    config = function()
-      -- set palenight
-      require('palenightfall').setup({
-        transparent = true,
-      })
-    end
   },
   {
      "folke/LazyVim",

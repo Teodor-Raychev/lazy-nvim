@@ -12,7 +12,13 @@ cmp.setup({
 	},
 })
 
--- Theme setup so that the borders are kept
+-- Theme setup for lsp
+-- color override
+require('palenightfall').configure_colors({
+  -- violet = '#82aaff',
+  violet = '#89ddff'
+})
+-- re-set the theme
 require('palenightfall').setup({
   transparent = true,
 })
