@@ -1,13 +1,19 @@
 return {
-  -- {
-  -- -- Theme NeoTokyo
-  -- "tokyonight.nvim",
-  -- lazy = true,
-  -- priority = 1000,
-  -- opts = {
-  --
-  -- }
-  -- },
+  {
+    "JoosepAlviste/palenightfall.nvim",
+    config = function()
+      -- set palenight
+      require('palenightfall').setup({
+        transparent = true,
+      })
+    end
+  },
+  {
+     "folke/LazyVim",
+     opts = {
+        colorscheme = "palenightfall"
+     },
+  }
   -- {
   --   "catppuccin/nvim",
   --   lazy = false,
@@ -46,29 +52,29 @@ return {
   --      colorscheme = "catppuccin-mocha",
   --   },
   -- },
-  {
-   "marko-cerovac/material.nvim",
-   lazy = false,
-   priority = 1000,
-   config = function()
-     local mat = require('material')
-
-     mat.setup({
-       disable = {
-         colored_cursor = true, -- Disable the colored cursor
-         borders = false, -- Disable borders between verticaly split windows
-         background = true, -- Prevent the theme from setting the background (NeoVim then uses your terminal background)
-         term_colors = false, -- Prevent the theme from setting terminal colors
-         eob_lines = false -- Hide the end-of-buffer lines
-       },
-     })
-     require("material.functions").change_style("palenight")
-   end
-  },
-  {
-    "folke/LazyVim",
-    opts = {
-      colorscheme = "material",
-    },
-  },
+  -- {
+  --  "marko-cerovac/material.nvim",
+  --  lazy = false,
+  --  priority = 1000,
+  --  config = function()
+  --    local mat = require('material')
+  --
+  --    mat.setup({
+  --      disable = {
+  --        colored_cursor = true, -- Disable the colored cursor
+  --        borders = false, -- Disable borders between verticaly split windows
+  --        background = true, -- Prevent the theme from setting the background (NeoVim then uses your terminal background)
+  --        term_colors = false, -- Prevent the theme from setting terminal colors
+  --        eob_lines = false -- Hide the end-of-buffer lines
+  --      },
+  --    })
+  --    require("material.functions").change_style("palenight")
+  --  end
+  -- },
+  -- {
+  --   "folke/LazyVim",
+  --   opts = {
+  --     colorscheme = "material",
+  --   },
+  -- },
 }

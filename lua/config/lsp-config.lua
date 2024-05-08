@@ -12,6 +12,11 @@ cmp.setup({
 	},
 })
 
+-- Theme setup so that the borders are kept
+require('palenightfall').setup({
+  transparent = true,
+})
+
 -- override border colors
 -- vim.cmd("hi NormalFloat guibg=#605beb")
 -- vim.cmd("hi FloatBorder guibg=#32302F guifg=#F2E2C3")

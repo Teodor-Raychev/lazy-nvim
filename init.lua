@@ -10,6 +10,6 @@ require("config.lsp-config")
 local lua_line = require("lualine")
 lua_line.setup({
   options = {
-    theme = "material-stealth"
+    theme = "auto"
   }
 })
