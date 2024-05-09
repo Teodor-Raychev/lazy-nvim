@@ -23,7 +23,7 @@ require('palenightfall').setup({
   transparent = true,
 })
 
--- override border colors
+-- override border colors. This will override theme colloer as well.
 -- vim.cmd("hi NormalFloat guibg=#605beb")
 -- vim.cmd("hi FloatBorder guibg=#32302F guifg=#F2E2C3")
 vim.cmd("hi FloatBorder guifg=#605beb")
@@ -67,65 +67,3 @@ vim.notify = function(msg, ...)
   return require("notify")(msg, ...)
 end
 
--- Ruby
--- For ruby each version must have ruby-lsp gem installed e.g. 3.3.0, 3.3.1 .. (gem install ruby-lsp)
--- local capabilities = vim.lsp.protocol.make_client_capabilities()
--- local mason_lspconfig = require("mason-lspconfig")
--- local servers = {
---   ruby_lsp = {},
--- }
---
--- mason_lspconfig.setup {
---   ensure_installed = vim.tbl_keys(servers),
--- }
---
--- mason_lspconfig.setup_handlers {
---   function(server_name)
---     require("lspconfig")[server_name].setup {
---       capabilities = capabilities,
---       on_attach = on_attach,
---       settings = servers[server_name],
---       filetypes = (servers[server_name] or {}).filetypes,
---     }
---   end
--- }
-
--- local configs = require("lspconfig.configs")
--- local util = require("lspconfig.util")
---
--- if not configs.ruby_lsp then
--- 	local enabled_features = {
--- 		"documentHighlights",
--- 		"documentSymbols",
--- 		"foldingRanges",
--- 		"selectionRanges",
--- 		-- "semanticHighlighting",
--- 		"formatting",
--- 		"codeActions",
--- 	}
---
--- 	configs.ruby_lsp = {
--- 		default_config = {
--- 			cmd = { "bundle", "exec", "ruby-lsp" },
--- 			filetypes = { "ruby" },
--- 			root_dir = util.root_pattern("Gemfile", ".git"),
--- 			init_options = {
--- 				enabledFeatures = enabled_features,
--- 			},
--- 			settings = {},
--- 		},
--- 		commands = {
--- 			FormatRuby = {
--- 				function()
--- 					vim.lsp.buf.format({
--- 						name = "ruby_lsp",
--- 						async = true,
--- 					})
--- 				end,
--- 				description = "Format using ruby-lsp",
--- 			},
--- 		},
--- 	}
--- end
---
--- lspconfig.ruby_lsp.setup({ on_attach = on_attach, capabilities = capabilities })
