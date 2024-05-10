@@ -16,6 +16,10 @@ cmp.setup({
 -- vim.cmd("hi FloatBorder guibg=#32302F guifg=#F2E2C3")
 vim.cmd("hi TreesitterContext guibg=#1e2124") -- TreeSitter context
 vim.cmd("hi FloatBorder guifg=#605beb") -- override border colors. This will override theme colors as well.
+-- Disable if theme is to be changed:
+vim.cmd("hi TelescopePromptPrefix guifg=#fa6969")
+vim.cmd("hi TelescopePromptTitle guibg=#fa6969")
+vim.cmd("hi TelescopePreviewTitle guibg=#82ecfa")
 
 local float = { focusable = true, style = "minimal", border = "rounded", }
 local lspconfig = require("lspconfig")
