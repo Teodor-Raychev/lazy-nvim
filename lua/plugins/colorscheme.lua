@@ -11,6 +11,7 @@ return {
       local n_orange = "#fcc781" -- "#f78c6c"
       local n_red = "#ed5555"
       local n_yellow = "#f2d17e"
+      local n_comment = "#888888"
 
       require("cyberdream").setup({
         -- Recommended - see "Configuring" below for more config options
@@ -24,7 +25,7 @@ return {
           highlights = {
             -- Highlight groups to override, adding new groups is also possible
             -- See `:help highlight-groups` for a list of highlight groups
-            Comment = { fg = "#696969", bg = "NONE", italic = true },
+            Comment = { fg = n_comment, bg = "NONE", italic = true },
             Constant = { fg = t.orange },
             String = { fg = t.n_green },
             Character = { fg = n_green },
@@ -49,6 +50,7 @@ return {
             -- green = "#00ff00", -- default
             green = n_green,
             orange = n_orange,
+            -- gray = "#9e9e9e",
             red = n_red,
             yellow = n_yellow,
             bgHighlight = "#3f3e4f",
