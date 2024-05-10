@@ -17,10 +17,14 @@ return {
 	},
 	config = function()
 		local cmp = require("cmp")
-
 		local luasnip = require("luasnip")
-
 		local lspkind = require("lspkind")
+    local win_setup = require("cmp.config.window")
+
+    window = {
+      completion = win_setup.bordered(),
+      documentation = win_setup.bordered(),
+    },
 
 		-- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
 		require("luasnip.loaders.from_vscode").lazy_load()
