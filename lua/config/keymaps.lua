@@ -18,6 +18,15 @@ keymap.set("n", "<leader>sw", telescope.grep_string, { desc = "[S]earch current 
 keymap.set("n", "<leader>sg", telescope.live_grep, { desc = "[S]earch by [G]rep" })
 keymap.set("n", "<leader>sd", telescope.diagnostics, { desc = "[S]earch [D]iagnostics" })
 
+-- Slightly advanced example of overriding default behavior and theme
+keymap.set('n', '<leader>/', function()
+  -- You can pass additional configuration to Telescope to change the theme, layout, etc.
+  telescope.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+    winblend = 10,
+    previewer = false,
+  })
+end, { desc = '[/] Fuzzily search in current buffer' })
+
 -- tabs
 keymap.set("n", "te", "tabedit", opts)
 -- Close current buffer

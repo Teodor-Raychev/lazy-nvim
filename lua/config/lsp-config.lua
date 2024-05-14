@@ -2,6 +2,13 @@
 local fidget = require("fidget")
 fidget.setup({})
 
+-- TreesitterContext
+local tree_context = require('treesitter-context')
+
+tree_context.setup{
+  max_lines = 8,
+}
+
 -- CMP
 local cmp = require("cmp")
 

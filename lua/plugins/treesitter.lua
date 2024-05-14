@@ -5,7 +5,17 @@ return {
   dependencies = {
     "andymass/vim-matchup",                        -- matchit replacement
     'nvim-treesitter/nvim-treesitter-textobjects', -- Syntax aware text objects
-    'nvim-treesitter/nvim-treesitter-context',                                          -- Code context
+    {
+      'nvim-treesitter/nvim-treesitter-context',                                          -- Code context
+      config = function()
+        require('treesitter-context').setup{ 
+          enable = true,
+          max_lines = 8,
+          line_numbers = true,
+          trim_scope = 'outer',
+      }
+    end,
+    },
     'nvim-treesitter/nvim-treesitter-refactor', -- Refactoring support
     'RRethy/nvim-treesitter-endwise',           -- Complete end
     'windwp/nvim-ts-autotag',                   -- Auto close tags
