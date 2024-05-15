@@ -125,7 +125,6 @@ return {
 					lspconfig[server_name].setup({
 						capabilities = capabilities,
             on_attach = on_attach,
-            settings = server_name,
             filetypes = (server_name or {}).filetypes,
 					})
 				end,

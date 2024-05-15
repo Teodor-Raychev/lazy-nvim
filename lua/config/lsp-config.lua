@@ -19,19 +19,6 @@ cmp.setup({
 	},
 })
 
--- -- vim.cmd("hi NormalFloat guifg=#605beb")
--- -- vim.cmd("hi FloatBorder guibg=#32302F guifg=#F2E2C3")
--- vim.cmd("hi TreesitterContext guibg=#1e2124") -- TreeSitter context
--- vim.cmd("hi FloatBorder guifg=#605beb") -- override border colors. This will override theme colors as well.
--- -- Disable if theme is to be changed:
--- vim.cmd("hi TelescopePromptPrefix guifg=#f07178")
--- vim.cmd("hi TelescopePromptTitle guibg=#f07178")
--- vim.cmd("hi TelescopePreviewTitle guibg=#82ecfa")
--- -- Diagnostics
--- vim.cmd("hi DiagnosticVirtualTextWarn guifg=#a38e72")
--- vim.cmd("hi DiagnosticVirtualTextInfo guifg=#8e9191")
--- vim.cmd("hi DiagnosticVirtualTextHint guifg=#999acc")
-
 -- Diagnostics
 -- vim.cmd("hi DiagnosticsInfo guifg=#c1f1f7")
 require("ruby-lsp").setup()
@@ -43,7 +30,6 @@ local handlers = {
 	["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, float),
 	["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, float),
 }
--- TODO create a proper loop
 lspconfig.solargraph.setup({
 	handlers = handlers,
 })
@@ -71,7 +57,9 @@ vim.cmd('autocmd BufRead,BufNewFile *.hbs set filetype=html')
 local banned_messages = {
   "No information available",
   "Welcome to LazyVim!",
+  "[lspconfig] unhandled error:",
 }
+
 vim.notify = function(msg, ...)
   for _, banned in ipairs(banned_messages) do
     if msg:find(banned) then
