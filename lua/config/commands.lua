@@ -14,7 +14,7 @@ vim.cmd("hi DiagnosticVirtualTextHint guifg=#999acc")
 
 -- Numbers:
 local num_color = '#4d4d4d'
-local num_accent = "#c981fc"
+local num_accent = "#ff5ea0"
 
 vim.api.nvim_set_hl(0, 'LineNrAbove', { fg=num_color, bold=true })
 vim.api.nvim_set_hl(0, 'LineNr', { fg=num_accent, bold=true })
