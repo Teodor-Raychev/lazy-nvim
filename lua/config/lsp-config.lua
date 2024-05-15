@@ -34,7 +34,7 @@ vim.cmd("hi DiagnosticVirtualTextHint guifg=#999acc")
 
 -- Diagnostics
 -- vim.cmd("hi DiagnosticsInfo guifg=#c1f1f7")
-
+require("ruby-lsp").setup()
 local float = { focusable = true, style = "minimal", border = "rounded", }
 local lspconfig = require("lspconfig")
 local handlers = {
@@ -48,7 +48,12 @@ lspconfig.solargraph.setup({
 	handlers = handlers,
 })
 lspconfig.ruby_lsp.setup({
+  vscode = true,
   handlers = handlers,
+  capabilities = capabilities,
+  on_attach = on_attach,
+  settings = server_name,
+  filetypes = (server_name or {}).filetypes,
 })
 lspconfig.lua_ls.setup({
 	handlers = handlers,
@@ -59,7 +64,6 @@ lspconfig.tsserver.setup({
 lspconfig.clangd.setup({
 	handlers = handlers,
 })
-
 -- include hbs limited support
 vim.cmd('autocmd BufRead,BufNewFile *.hbs set filetype=html')
 
@@ -67,7 +71,6 @@ vim.cmd('autocmd BufRead,BufNewFile *.hbs set filetype=html')
 local banned_messages = {
   "No information available",
   "Welcome to LazyVim!",
-  "ruby_ls is deprecated, use ruby_lsp instead.",
 }
 vim.notify = function(msg, ...)
   for _, banned in ipairs(banned_messages) do

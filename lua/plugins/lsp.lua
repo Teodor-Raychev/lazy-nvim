@@ -1,5 +1,6 @@
 return {
 	{ "nvim-lua/plenary.nvim" },
+  { "mihyaeru21/nvim-ruby-lsp" },
 	{
 		"L3MON4D3/LuaSnip",
 		-- follow latest release.
@@ -114,12 +115,18 @@ return {
 				local hl = "DiagnosticSign" .. type
 				vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 			end
-
 			mason_lspconfig.setup_handlers({
 				-- default handler for installed servers
 				function(server_name)
+          if(server_name == "ruby_ls")
+            then
+            return
+          end
 					lspconfig[server_name].setup({
 						capabilities = capabilities,
+            on_attach = on_attach,
+            settings = server_name,
+            filetypes = (server_name or {}).filetypes,
 					})
 				end,
 				["lua_ls"] = function()

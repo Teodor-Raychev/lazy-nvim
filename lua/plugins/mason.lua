@@ -32,6 +32,7 @@ return {
 				"tsserver",
 				"html",
 				"cssls",
+        "ruby_ls",
 				"tailwindcss",
 				"lua_ls",
 			},
