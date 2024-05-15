@@ -11,7 +11,7 @@ return {
       local n_orange = "#fcc781" -- "#f78c6c"
       local n_red = "#ed5555"
       local n_yellow = "#f2d17e"
-      local n_comment = "#888888"
+      local n_comment = "#838491"
 
       require("cyberdream").setup({
         -- Recommended - see "Configuring" below for more config options
