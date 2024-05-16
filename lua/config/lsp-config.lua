@@ -41,6 +41,9 @@ lspconfig.ruby_lsp.setup({
   settings = server_name,
   filetypes = (server_name or {}).filetypes,
 })
+lspconfig.pylsp.setup({
+  handlers = handlers,
+})
 lspconfig.lua_ls.setup({
 	handlers = handlers,
 })
