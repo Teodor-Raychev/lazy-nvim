@@ -19,3 +19,4 @@ local num_accent = "#ff5ea0"
 vim.api.nvim_set_hl(0, 'LineNrAbove', { fg=num_color, bold=true })
 vim.api.nvim_set_hl(0, 'LineNr', { fg=num_accent, bold=true })
 vim.api.nvim_set_hl(0, 'LineNrBelow', { fg=num_color, bold=true })
+

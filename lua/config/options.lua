@@ -29,4 +29,3 @@ opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or 
 
 -- turn off swapfile
 opt.swapfile = false
-
