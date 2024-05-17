@@ -30,9 +30,6 @@ local handlers = {
 	["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, float),
 	["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, float),
 }
-lspconfig.solargraph.setup({
-	handlers = handlers,
-})
 lspconfig.ruby_lsp.setup({
   vscode = true,
   handlers = handlers,
@@ -41,7 +38,7 @@ lspconfig.ruby_lsp.setup({
   settings = server_name,
   filetypes = (server_name or {}).filetypes,
 })
-lspconfig.pylsp.setup({
+lspconfig.pyright.setup({
   handlers = handlers,
 })
 lspconfig.lua_ls.setup({
