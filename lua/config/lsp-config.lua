@@ -38,8 +38,14 @@ lspconfig.ruby_lsp.setup({
   settings = server_name,
   filetypes = (server_name or {}).filetypes,
 })
+-- Node version is also considered for python.
+-- If < 14 version is used the lsp client won't work
+-- happens with nvm mostly.
 lspconfig.pyright.setup({
   handlers = handlers,
+  root_dir = function()
+    return vim.fn.getcwd()
+  end,
 })
 lspconfig.lua_ls.setup({
 	handlers = handlers,
