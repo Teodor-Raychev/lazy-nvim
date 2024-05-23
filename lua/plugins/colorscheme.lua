@@ -15,7 +15,7 @@ return {
 
       require("cyberdream").setup({
         -- Recommended - see "Configuring" below for more config options
-        transparent = true,
+        transparent = false,
         italic_comments = true,
         hide_fillchars = true,       -- Replace all fillchars with ' ' for the ultimate clean look
         borderless_telescope = true, -- Modern borderless telescope theme
@@ -45,15 +45,19 @@ return {
           colors = {
             -- For a list of colors see `lua/cyberdream/colours.lua`
             -- Example:
-            bg = "#000000",
-            bgAlt = "#25262e",
+            bg = "#25262e",
+            -- bgAlt = "#25262e", for transparent
+            bgAlt = "#1f1f26",
             -- green = "#00ff00", -- default
             green = n_green,
             orange = n_orange,
             -- gray = "#9e9e9e",
             red = n_red,
             yellow = n_yellow,
-            bgHighlight = "#3f3e4f",
+            -- bgHighlight = "#3f3e4f", for transparent
+            -- bgHighlight = "#bdb6cc"
+            -- bgHighlight = "#85818f"
+            bgHighlight = "#696670"
           },
         },
       })

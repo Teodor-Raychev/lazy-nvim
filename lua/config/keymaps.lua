@@ -31,7 +31,7 @@ end, { desc = '[/] Fuzzily search in current buffer' })
 keymap.set("n", "te", "tabedit", opts)
 -- Close current buffer
 keymap.set("n", "<A-w>", [[:bd<Enter>]])
-
+keymap.set("n", "<leader>bd", [[:bufdo bd<CR>]])
 -- Increment/decrement Integer num
 keymap.set("n", "+", "<C-a>")
 keymap.set("n", "-", "<C-x>")

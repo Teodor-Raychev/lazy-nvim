@@ -1,7 +1,7 @@
 local opt = vim.opt
 
 --Cursor
-opt.cursorline = true    -- Enable highlighting of the current line
+opt.cursorline = false    -- Enable highlighting of the current line
 opt.termguicolors = true -- True color: support
 opt.pumblend = 10        -- Popup blend
 opt.winblend = 0
