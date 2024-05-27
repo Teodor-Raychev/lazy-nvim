@@ -46,6 +46,7 @@ return {
             -- For a list of colors see `lua/cyberdream/colours.lua`
             -- Example:
             bg = "#25262e",
+            -- bg = "#9e9e9e",
             -- bgAlt = "#25262e", for transparent
             bgAlt = "#1f1f26",
             -- green = "#00ff00", -- default
@@ -58,6 +59,7 @@ return {
             -- bgHighlight = "#bdb6cc"
             -- bgHighlight = "#85818f"
             bgHighlight = "#696670"
+            -- bgHighlight = "#563ab0"
           },
         },
       })
