@@ -4,8 +4,9 @@
 vim.cmd("hi TreesitterContext guibg=#1e2124") -- TreeSitter context
 vim.cmd("hi FloatBorder guifg=#605beb") -- override border colors. This will override theme colors as well.
 -- Disable if theme is to be changed:
-vim.cmd("hi TelescopePromptPrefix guifg=#f07178")
-vim.cmd("hi TelescopePromptTitle guibg=#f07178")
+vim.cmd("hi TelescopePromptPrefix guifg=#ed455e")
+-- vim.cmd("hi TelescopePromptTitle guibg=#f07178")
+vim.cmd("hi TelescopePromptTitle guibg=#ed455e")
 vim.cmd("hi TelescopePreviewTitle guibg=#82ecfa")
 -- Diagnostics
 vim.cmd("hi DiagnosticVirtualTextWarn guifg=#a38e72")

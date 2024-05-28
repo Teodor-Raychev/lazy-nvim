@@ -2,7 +2,7 @@ local custom_horizon = require 'lualine.themes.horizon'
 local bg = '#25262e'
 local light_bg = '#353742'
 local accent = '#878aa8'
-local cmd = "#7b5ffa"
+local cmd = "#ed455e"
 local insert = "#3ccafa"
 local visual = "#ffb34f"
 -- Change the background of lualine_c section for normal mode
