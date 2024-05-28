@@ -56,10 +56,8 @@ return {
             red = n_red,
             yellow = n_yellow,
             -- bgHighlight = "#3f3e4f", for transparent
-            -- bgHighlight = "#bdb6cc"
-            -- bgHighlight = "#85818f"
-            bgHighlight = "#696670"
-            -- bgHighlight = "#563ab0"
+            -- bgHighlight = "#696670"
+            bgHighlight = "#57566b"
           },
         },
       })
