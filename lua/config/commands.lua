@@ -7,8 +7,8 @@ vim.cmd("hi FloatBorder guifg=#605beb") -- override border colors. This will ove
 vim.cmd("hi TelescopePromptPrefix guifg=#ed455e")
 -- vim.cmd("hi TelescopePromptTitle guibg=#f07178")
 -- vim.cmd("hi TelescopePromptTitle guibg=#ed455e")
-vim.cmd("hi TelescopePromptTitle guibg=#F75169")
-vim.cmd("hi TelescopePreviewTitle guibg=#82ecfa")
+vim.cmd("hi TelescopePromptTitle guibg=#cfe0fc")
+vim.cmd("hi TelescopePreviewTitle guibg=#cfe0fc")
 -- Diagnostics
 vim.cmd("hi DiagnosticVirtualTextWarn guifg=#a38e72")
 vim.cmd("hi DiagnosticVirtualTextInfo guifg=#8e9191")
