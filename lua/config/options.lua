@@ -29,3 +29,18 @@ opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or 
 
 -- turn off swapfile
 opt.swapfile = false
+
+-- folding
+-- zR => open all folds
+-- zM => close all open folds
+-- za => togle fold at the cursor
+-- vim.opt.fillchars = { fold = " " }
+-- opt.foldmethod = "expr"
+opt.foldmethod = "indent"
+opt.foldenable = false
+-- opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+-- opt.foldcolumn = "0"
+-- opt.foldtext = ""
+opt.foldlevel = 99
+-- opt.foldlevelstart = 4
+-- opt.foldnestmax = 4

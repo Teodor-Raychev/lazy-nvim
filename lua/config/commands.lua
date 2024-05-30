@@ -13,6 +13,8 @@ vim.cmd("hi TelescopePreviewTitle guibg=#cfe0fc")
 vim.cmd("hi DiagnosticVirtualTextWarn guifg=#a38e72")
 vim.cmd("hi DiagnosticVirtualTextInfo guifg=#8e9191")
 vim.cmd("hi DiagnosticVirtualTextHint guifg=#999acc")
+-- keep the default Highlights inversion:
+vim.cmd("hi Visual  guifg=#000000 guibg=#cfe0fc gui=none")
 
 -- Numbers:
 local num_color = '#4d4d4d'
