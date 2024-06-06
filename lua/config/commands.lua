@@ -9,6 +9,7 @@ vim.cmd("hi TelescopePromptPrefix guifg=#ed455e")
 -- vim.cmd("hi TelescopePromptTitle guibg=#ed455e")
 vim.cmd("hi TelescopePromptTitle guibg=#cfe0fc")
 vim.cmd("hi TelescopePreviewTitle guibg=#cfe0fc")
+vim.cmd("hi TelescopePromptCounter guifg=#cfc4c2")
 -- Diagnostics
 vim.cmd("hi DiagnosticVirtualTextWarn guifg=#a38e72")
 vim.cmd("hi DiagnosticVirtualTextInfo guifg=#8e9191")
@@ -25,3 +26,9 @@ vim.api.nvim_set_hl(0, 'LineNrAbove', { fg=num_color, bold=true })
 vim.api.nvim_set_hl(0, 'LineNr', { fg=num_accent, bold=true })
 vim.api.nvim_set_hl(0, 'LineNrBelow', { fg=num_color, bold=true })
 
+-- Undotree presistent
+-- to cleacn the directory::
+-- set undolevels=-1
+vim.cmd("set undodir=~/.vim/undodir")
+vim.cmd("set undofile")
+vim.cmd("set undolevels=1000")

@@ -18,7 +18,6 @@ keymap.set("n", "<leader>sw", telescope.grep_string, { desc = "[S]earch current 
 keymap.set("n", "<leader>sg", telescope.live_grep, { desc = "[S]earch by [G]rep" })
 keymap.set("n", "<leader>sd", telescope.diagnostics, { desc = "[S]earch [D]iagnostics" })
 
--- Slightly advanced example of overriding default behavior and theme
 keymap.set('n', '<leader>/', function()
   -- You can pass additional configuration to Telescope to change the theme, layout, etc.
   telescope.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
@@ -28,10 +27,12 @@ keymap.set('n', '<leader>/', function()
 end, { desc = '[/] Fuzzily search in current buffer' })
 
 -- tabs
-keymap.set("n", "te", "tabedit", opts)
+-- keymap.set("n", "te", "tabedit", opts)
+
 -- Close current buffer
 keymap.set("n", "<A-w>", [[:bd<Enter>]])
 keymap.set("n", "<leader>bd", [[:bufdo bd<CR>]])
+
 -- Increment/decrement Integer num
 keymap.set("n", "+", "<C-a>")
 keymap.set("n", "-", "<C-x>")
@@ -41,13 +42,11 @@ keymap.set("n", "dw", 'vb"_d')
 
 -- move selection one tab by direction
 keymap.set("v", "<", "<gv")
-keymap.set("n", ">", ">gv")
-keymap.set("n", ">", ">gv")
 keymap.set("v", "<", "<gv")
 
 -- Move lines up and down while in visual mode.
-keymap.set("v", "<down>", ":m '>+1<CR>gv=gv")
-keymap.set("v", "<up>", ":m '<-2<CR>gv=gv")
+-- keymap.set("v", "<down>", ":m '>+1<CR>gv=gv")
+-- keymap.set("v", "<up>", ":m '<-2<CR>gv=gv")
 
 -- Keep cursor as move.
 keymap.set("n", "<C-d>", "<C-d>zz")
@@ -61,9 +60,12 @@ keymap.set("n", "N", "Nzzzv")
 keymap.set("n", "<C-d>", "<C-d>zz")
 keymap.set("n", "<C-u>", "<C-u>zz")
 
+-- move outside surronding brackets/quotes:
+keymap.set("n", "<C><S>", "<C-c><S-a>")
+
 -- Yank / Paste
 -- keep the paste buffer.
-keymap.set("x", "<leader>p", '"_dP')
+keymap.set("x", "<leader>p", '"_d]P')
 
 -- yanks to system clipboard.
 keymap.set({ "n", "v" }, "<leader>y", [["+y]])

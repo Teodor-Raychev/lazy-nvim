@@ -59,6 +59,11 @@ return {
 			[">"] = "next_source",
 			["i"] = "show_file_details",
 		},
+    filesystem = {
+      filtered_items = {
+        hide_dotfiles = false,
+      },
+    },
 	},
 }
 

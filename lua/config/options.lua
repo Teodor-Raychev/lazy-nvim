@@ -44,3 +44,15 @@ opt.foldenable = false
 opt.foldlevel = 99
 -- opt.foldlevelstart = 4
 -- opt.foldnestmax = 4
+
+-- blink
+-- vim.o.guicursor = table.concat({
+--   "n-v-c:block-Cursor/lCursor-blinkwait1000-blinkon100-blinkoff100",
+--   "i-ci:ver25-Cursor/lCursor-blinkwait1000-blinkon100-blinkoff100",
+--   "r:hor50-Cursor/lCursor-blinkwait100-blinkon100-blinkoff100"
+-- }, ",")
+
+-- penv
+-- vim.g.python3_host_prog = '/home/teodor-raychev/.pyenv/shims/python'
+-- -- vim.lsp.set_log_level("debug")
+
