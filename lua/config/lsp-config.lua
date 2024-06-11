@@ -56,6 +56,12 @@ lspconfig.tsserver.setup({
 lspconfig.clangd.setup({
 	handlers = handlers,
 })
+lspconfig.html.setup({
+  handlers = handlers,
+})
+lspconfig.bashls.setup({
+  handlers = handlers,
+})
 -- include hbs limited support
 vim.cmd('autocmd BufRead,BufNewFile *.hbs set filetype=html')
 

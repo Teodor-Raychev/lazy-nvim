@@ -34,6 +34,7 @@ return {
         -- "solargraph",
 				"tsserver",
 				"html",
+        "bashls",
 				"cssls",
 				"tailwindcss",
 			},
