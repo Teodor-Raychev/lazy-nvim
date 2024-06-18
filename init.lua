@@ -8,3 +8,4 @@ require("config.options")
 require("config.commands")
 require("config.lsp-config")
 require("config.custom_lualine")
+
