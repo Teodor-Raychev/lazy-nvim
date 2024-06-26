@@ -2,6 +2,12 @@ local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 local telescope = require("telescope.builtin")
 
+-- git
+-- diffget <branch>
+keymap.set("n", "<leader>gd", [[:Gvdiffsplit!<CR>]])
+keymap.set("n", "<leader>gdd", [[:Gvdiffsplit<CR>]])
+keymap.set("n", "<leader>dg", [[:diffget ]])
+
 -- lsp
 keymap.set("n", "K", vim.lsp.buf.hover, {})
 keymap.set("n", "gd", vim.lsp.buf.definition, {})
