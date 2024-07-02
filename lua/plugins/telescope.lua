@@ -4,7 +4,7 @@ return {
 		opts = {
 			defaults = {
 				layout_strategy = "horizontal",
-        file_ignore_patterns = { "^%.git/", "^node_modules/" },
+        file_ignore_patterns = { "^%.git/", "^node_modules/", "node_modules" },
 				layout_config = {
 					prompt_position = "top",
 				},
