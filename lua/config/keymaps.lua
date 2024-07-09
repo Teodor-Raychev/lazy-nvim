@@ -2,6 +2,9 @@ local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 local telescope = require("telescope.builtin")
 
+-- replace double qoutes with single quotes: 
+-- s/"/'/g
+
 -- git
 -- diffget <branch>
 keymap.set("n", "<leader>gd", [[:Gvdiffsplit!<CR>]])

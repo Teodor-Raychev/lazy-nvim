@@ -62,8 +62,9 @@ lspconfig.html.setup({
 lspconfig.bashls.setup({
   handlers = handlers,
 })
--- include hbs limited support
+-- include hbs, rbs limited support
 vim.cmd('autocmd BufRead,BufNewFile *.hbs set filetype=html')
+vim.cmd('autocmd BufRead,BufNewFile *.rbs set filetype=html')
 
 -- silent hover 
 local banned_messages = {
