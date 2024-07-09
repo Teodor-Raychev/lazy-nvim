@@ -3,7 +3,7 @@ local opt = vim.opt
 --Cursor
 opt.cursorline = false    -- Enable highlighting of the current line
 opt.termguicolors = true -- True color: support
-opt.pumblend = 10        -- Popup blend
+opt.pumblend = 10        -- Pop up blend
 opt.winblend = 0
 
 -- numbers
@@ -33,7 +33,7 @@ opt.swapfile = false
 -- folding
 -- zR => open all folds
 -- zM => close all open folds
--- za => togle fold at the cursor
+-- za => toggle fold at the cursor
 -- vim.opt.fillchars = { fold = " " }
 -- opt.foldmethod = "expr"
 opt.foldmethod = "indent"
@@ -56,3 +56,8 @@ opt.foldlevel = 99
 -- vim.g.python3_host_prog = '/home/teodor-raychev/.pyenv/shims/python'
 -- -- vim.lsp.set_log_level("debug")
 
+-- Enable Neovim Spellchecking
+-- z= opens suggestions.
+-- zg => tells the spellchecking this is a good word.
+vim.opt.spelllang = 'en_us'
+vim.opt.spell = true

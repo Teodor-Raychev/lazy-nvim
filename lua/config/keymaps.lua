@@ -10,6 +10,7 @@ local telescope = require("telescope.builtin")
 keymap.set("n", "<leader>gd", [[:Gvdiffsplit!<CR>]])
 keymap.set("n", "<leader>gdd", [[:Gvdiffsplit<CR>]])
 keymap.set("n", "<leader>dg", [[:diffget ]])
+keymap.set("n", "<leader>gh", [[:Gitsigns reset_hunk<CR>]])
 
 -- lsp
 keymap.set("n", "K", vim.lsp.buf.hover, {})
