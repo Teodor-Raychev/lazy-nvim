@@ -32,3 +32,6 @@ vim.api.nvim_set_hl(0, 'LineNrBelow', { fg=num_color, bold=true })
 vim.cmd("set undodir=~/.vim/undodir")
 vim.cmd("set undofile")
 vim.cmd("set undolevels=1000")
+
+--set the line space between lines:
+vim.cmd("set linespace=4")

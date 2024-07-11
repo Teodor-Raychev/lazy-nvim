@@ -70,7 +70,7 @@ keymap.set("n", "N", "Nzzzv")
 keymap.set("n", "<C-d>", "<C-d>zz")
 keymap.set("n", "<C-u>", "<C-u>zz")
 
--- move outside surronding brackets/quotes:
+-- move outside surrounding brackets/quotes:
 keymap.set("n", "<C><S>", "<C-c><S-a>")
 
 -- Yank / Paste
@@ -91,13 +91,13 @@ keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left
 -- Selections
 -- Select All
 keymap.set("n", "<C-a>", "gg<S-v>G")
--- higlight and copy word
+-- highlight and copy word
 keymap.set("n", "<leader>h", "viw<leader>")
--- higlight and copy whole block
+-- highlight and copy whole block
 keymap.set("n", "<leader>H", "viw<leader>y")
 -- keymap.set("n", "viw", "C-w")
--- Goto
+-- Go To
 keymap.set({ "n", "v" }, "<leader>n", "g_")
 
--- Togle Neotree
+-- Toggle NeoTree
 keymap.set("n", "<leader>e", "<Cmd>Neotree toggle<CR>")
