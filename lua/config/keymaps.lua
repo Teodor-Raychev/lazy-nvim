@@ -5,12 +5,46 @@ local telescope = require("telescope.builtin")
 -- replace double qoutes with single quotes: 
 -- s/"/'/g
 
+-- Toggle Spelling
+local function vim_opt_toggle(opt, on, off, name)
+  local message = name
+  if vim.opt[opt]:get() == off then
+    vim.opt[opt] = on
+    message = message .. " Enabled"
+  else
+    vim.opt[opt] = off
+    message = message .. " Disabled"
+  end
+  vim.notify(message)
+end
+
+vim.keymap.set("n", "<leader>ss",function()
+  vim_opt_toggle("spell", true, false, "Spelling")
+end)
+vim.keymap.set("n", "<leader>ss", function()
+  vim_opt_toggle("spell", true, false, "Spelling")
+end)
+
 -- git
 -- diffget <branch>
 keymap.set("n", "<leader>gd", [[:Gvdiffsplit!<CR>]])
 keymap.set("n", "<leader>gdd", [[:Gvdiffsplit<CR>]])
 keymap.set("n", "<leader>dg", [[:diffget ]])
-keymap.set("n", "<leader>gh", [[:Gitsigns reset_hunk<CR>]])
+-- this currently available via <leader>ghr
+-- keymap.set("n", "<leader>gh", [[:Gitsigns reset_hunk<CR>]])
+
+-- get File history for current git branch:
+keymap.set("n", "<leader>ghf", function()
+  vim.cmd("DiffviewOpen")
+end, { desc = "[G]it [H]istory of [F]iles for current branch" })
+keymap.set("n", "<leader>ghF", function()
+  vim.cmd("DiffviewFileHistory")
+end, { desc = "[G]it [H]istory of [F]iles Full history" })
+keymap.set("n", "<leader>ghfc", function()
+  vim.cmd("DiffviewClose")
+end, { desc = "[Git] [H]istory [F]iles [C]lose"})
+
+
 
 -- lsp
 keymap.set("n", "K", vim.lsp.buf.hover, {})
@@ -18,7 +52,7 @@ keymap.set("n", "gd", vim.lsp.buf.definition, {})
 keymap.set("n", "gr", vim.lsp.buf.references, {})
 keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
 
--- Telescope:
+-- Telescope::
 keymap.set("n", "<leader>?", telescope.oldfiles, { desc = "[?] Find recently opened files" })
 keymap.set("n", "<leader><space>", telescope.buffers, { desc = "[ ] Find existing buffers" })
 keymap.set("n", "<leader>gf", telescope.git_files, { desc = "Search [G]it [F]iles" })
