@@ -69,9 +69,11 @@ keymap.set('n', '<leader>/', function()
 end, { desc = '[/] Fuzzily search in current buffer' })
 
 -- Test 
-keymap.set("n", "<leader>mt", ":lua require('neotest').run.run()<CR>")
-keymap.set("n", "<leader>mf", ":lua require('neotest').run.run(vim.fn.expand('%'))<CR>")
-keymap.set("n", "<leader>ms", ":lua require('neotest').summary.toggle()<CR>")
+keymap.set("n", "<leader>mt", ":lua require('neotest').run.run()<CR>", { desc = "[M]ake Neo[T]est run under cursor"})
+keymap.set("n", "<leader>mo", ":lua require('neotest').output.open()<CR>", { desc = "NeoTest [O]utput"})
+keymap.set("n", "<leader>mc", ":lua require('neotest').run.stop()<CR>", { desc = "[M]ale NeoTest [C]ancel the run" })
+keymap.set("n", "<leader>mf", ":lua require('neotest').run.run(vim.fn.expand('%'))<CR>", { desc = "[M]ake NeoTest for the [F]ile"})
+keymap.set("n", "<leader>ms", ":lua require('neotest').summary.toggle()<CR>", { desc = "Toggle NeoTest [S]ummary"})
 
 
 -- tabs
