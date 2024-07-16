@@ -3,7 +3,7 @@ local fidget = require("fidget")
 fidget.setup({})
 
 -- TreesitterContext
-local tree_context = require('treesitter-context')
+local tree_context = require("treesitter-context")
 
 tree_context.setup{
   max_lines = 8,
@@ -17,6 +17,22 @@ cmp.setup({
 		completion = cmp.config.window.bordered(),
 		documentation = cmp.config.window.bordered(),
 	},
+})
+
+-- Testings
+local neo_test = require("neotest")
+neo_test.setup({
+  adapters = {
+    require("neotest-rspec")({
+      rspec_cmd = function()
+        return vim.tbl_flatten({
+          "bundle",
+          "exec",
+          "rspec",
+        })
+      end
+    }),
+  },
 })
 
 -- Diagnostics

@@ -1,5 +1,5 @@
 local keymap = vim.keymap
-local opts = { noremap = true, silent = true }
+-- local opts = { noremap = true, silent = true }
 local telescope = require("telescope.builtin")
 
 -- replace double qoutes with single quotes: 
@@ -44,8 +44,6 @@ keymap.set("n", "<leader>ghfc", function()
   vim.cmd("DiffviewClose")
 end, { desc = "[Git] [H]istory [F]iles [C]lose"})
 
-
-
 -- lsp
 keymap.set("n", "K", vim.lsp.buf.hover, {})
 keymap.set("n", "gd", vim.lsp.buf.definition, {})
@@ -69,6 +67,12 @@ keymap.set('n', '<leader>/', function()
     previewer = false,
   })
 end, { desc = '[/] Fuzzily search in current buffer' })
+
+-- Test 
+keymap.set("n", "<leader>mt", ":lua require('neotest').run.run()<CR>")
+keymap.set("n", "<leader>mf", ":lua require('neotest').run.run(vim.fn.expand('%'))<CR>")
+keymap.set("n", "<leader>ms", ":lua require('neotest').summary.toggle()<CR>")
+
 
 -- tabs
 -- keymap.set("n", "te", "tabedit", opts)
