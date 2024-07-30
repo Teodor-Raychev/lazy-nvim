@@ -60,4 +60,4 @@ opt.foldlevel = 99
 -- z= opens suggestions.
 -- zg => tells the spellchecking this is a good word.
 vim.opt.spelllang = 'en_us'
-vim.opt.spell = true
+vim.opt.spell = false

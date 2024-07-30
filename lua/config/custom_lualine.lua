@@ -1,4 +1,6 @@
 local custom_horizon = require 'lualine.themes.horizon'
+-- local pink = "#ff5ea0"
+-- local cyan = "#5ef1ff"
 local bg = '#25262e'
 local light_bg = '#353742'
 local accent = '#878aa8'
@@ -19,6 +21,7 @@ custom_horizon.visual.a.bg = light_bg
 custom_horizon.replace.c.bg = bg
 custom_horizon.command.c.bg = bg
 custom_horizon.command.a.bg = cmd
+
 require('lualine').setup {
   options = { theme = custom_horizon },
 }
