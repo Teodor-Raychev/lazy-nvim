@@ -2,7 +2,7 @@ local keymap = vim.keymap
 -- local opts = { noremap = true, silent = true }
 local telescope = require("telescope.builtin")
 
--- replace double qoutes with single quotes: 
+-- replace double qoutes with single quotes:
 -- s/"/'/g
 
 -- Toggle Spelling
@@ -18,7 +18,7 @@ local function vim_opt_toggle(opt, on, off, name)
   vim.notify(message)
 end
 
-vim.keymap.set("n", "<leader>ss",function()
+vim.keymap.set("n", "<leader>ss", function()
   vim_opt_toggle("spell", true, false, "Spelling")
 end)
 vim.keymap.set("n", "<leader>ss", function()
@@ -42,7 +42,7 @@ keymap.set("n", "<leader>ghF", function()
 end, { desc = "[G]it [H]istory of [F]iles Full history" })
 keymap.set("n", "<leader>ghfc", function()
   vim.cmd("DiffviewClose")
-end, { desc = "[Git] [H]istory [F]iles [C]lose"})
+end, { desc = "[Git] [H]istory [F]iles [C]lose" })
 
 -- lsp
 keymap.set("n", "K", vim.lsp.buf.hover, {})
@@ -60,21 +60,21 @@ keymap.set("n", "<leader>sw", telescope.grep_string, { desc = "[S]earch current 
 keymap.set("n", "<leader>sg", telescope.live_grep, { desc = "[S]earch by [G]rep" })
 keymap.set("n", "<leader>sd", telescope.diagnostics, { desc = "[S]earch [D]iagnostics" })
 
-keymap.set('n', '<leader>/', function()
+keymap.set("n", "<leader>/", function()
   -- You can pass additional configuration to Telescope to change the theme, layout, etc.
-  telescope.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+  telescope.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
     winblend = 10,
     previewer = false,
-  })
-end, { desc = '[/] Fuzzily search in current buffer' })
+  }))
+end, { desc = "[/] Fuzzily search in current buffer" })
 
--- Test 
-keymap.set("n", "<leader>mt", ":lua require('neotest').run.run()<CR>", { desc = "[M]ake Neo[T]est run under cursor"})
-keymap.set("n", "<leader>mo", ":lua require('neotest').output.open()<CR>", { desc = "NeoTest [O]utput"})
-keymap.set("n", "<leader>mc", ":lua require('neotest').run.stop()<CR>", { desc = "[M]ale NeoTest [C]ancel the run" })
-keymap.set("n", "<leader>mf", ":lua require('neotest').run.run(vim.fn.expand('%'))<CR>", { desc = "[M]ake NeoTest for the [F]ile"})
-keymap.set("n", "<leader>ms", ":lua require('neotest').summary.toggle()<CR>", { desc = "Toggle NeoTest [S]ummary"})
-
+-- Test
+-- keymap.set("n", "<leader>mt", ":lua require('neotest').run.run()<CR>", { desc = "[M]ake Neo[T]est run under cursor"})
+-- keymap.set("n", "<leader>mo", ":lua require('neotest').output.open()<CR>", { desc = "NeoTest [O]utput"})
+-- keymap.set("n", "<leader>mc", ":lua require('neotest').run.stop()<CR>", { desc = "[M]ale NeoTest [C]ancel the run" })
+-- keymap.set("n", "<leader>mf", ":lua require('neotest').run.run(vim.fn.expand('%'))<CR>", { desc = "[M]ake NeoTest for the [F]ile"})
+-- keymap.set("n", "<leader>ms", ":lua require('neotest').summary.toggle()<CR>", { desc = "Toggle NeoTest [S]ummary"})
+--
 
 -- tabs
 -- keymap.set("n", "te", "tabedit", opts)
@@ -120,7 +120,7 @@ keymap.set("x", "<leader>p", '"_d]P')
 -- yanks to system clipboard.
 keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 keymap.set("n", "<leader>Y", [["+Y]])
-keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+-- keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 keymap.set("n", "<leader>f", vim.lsp.buf.format)
 -- Do not yank with x
 -- keymap.set("n", "x", '"_x')

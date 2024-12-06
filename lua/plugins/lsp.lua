@@ -24,20 +24,8 @@ return {
       "f3fora/cmp-spell",
       "hrsh7th/cmp-nvim-lsp-signature-help",
       {
-        "j-hui/fidget.nvim",
-        opts = {
-          window = {
-            windblend = 0, -- Background color opacity in the notification window
-          },
-        },
-      },
-      {
         "antosha417/nvim-lsp-file-operations",
         config = true,
-      },
-      {
-        "folke/neodev.nvim",
-        opts = {},
       },
     },
     config = function()
@@ -101,12 +89,8 @@ return {
         end,
       })
       -- used to enable autocompletion (assign to every lsp server config)
-      local capabilities = vim.tbl_deep_extend(
-      "force",
-      {},
-      vim.lsp.protocol.make_client_capabilities(),
-      cmp_lsp.default_capabilities()
-      )
+      local capabilities =
+        vim.tbl_deep_extend("force", {}, vim.lsp.protocol.make_client_capabilities(), cmp_lsp.default_capabilities())
 
       -- Change the Diagnostic symbols in the sign column (gutter)
       -- (not in youtube nvim video)
@@ -117,46 +101,45 @@ return {
       end
       mason_lspconfig.setup_handlers({
         -- default handler for installed servers
-        function(server_name)
-          if(server_name == "ruby_ls")
-            then
-              return
-            end
-            lspconfig[server_name].setup({
-              capabilities = capabilities,
-              on_attach = on_attach,
-              filetypes = (server_name or {}).filetypes,
-            })
-          end,
-          ["lua_ls"] = function()
-            -- configure lua server (with special settings)
-            lspconfig["lua_ls"].setup({
-              capabilities = capabilities,
-              filetypes = {'lua'},
-              settings = {
-                Lua = {
-                  -- make the language server recognize "vim" global
-                  diagnostics = {
-                    globals = { "vim" },
-                  },
-                  completion = {
-                    callSnippet = "Replace",
-                  },
+        function(server_name, on_attach)
+          if server_name == "ruby_ls" then
+            return
+          end
+          lspconfig[server_name].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+            filetypes = (server_name or {}).filetypes,
+          })
+        end,
+        ["lua_ls"] = function()
+          -- configure lua server (with special settings)
+          lspconfig["lua_ls"].setup({
+            capabilities = capabilities,
+            filetypes = { "lua" },
+            settings = {
+              Lua = {
+                -- make the language server recognize "vim" global
+                diagnostics = {
+                  globals = { "vim" },
+                },
+                completion = {
+                  callSnippet = "Replace",
                 },
               },
-            })
-          end,
-        })
-      end,
+            },
+          })
+        end,
+      })
+    end,
+  },
+  {
+    "nvim-neotest/neotest",
+    dependencies = {
+      "nvim-neotest/nvim-nio",
+      "nvim-lua/plenary.nvim",
+      "antoinemadec/FixCursorHold.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "olimorris/neotest-rspec",
     },
-    {
-      "nvim-neotest/neotest",
-      dependencies = {
-        "nvim-neotest/nvim-nio",
-        "nvim-lua/plenary.nvim",
-        "antoinemadec/FixCursorHold.nvim",
-        "nvim-treesitter/nvim-treesitter",
-        "olimorris/neotest-rspec",
-      }
-    },
-  }
+  },
+}
