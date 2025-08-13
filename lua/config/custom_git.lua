@@ -8,4 +8,3 @@ vim.cmd("hi ConflictMarkerOurs guibg=#2e5049")
 vim.cmd("hi ConflictMarkerEnd guibg=#2f628e")
 vim.cmd("hi ConflictMarkerTheirs guibg=#344f69")
 vim.cmd("hi ConflictMarkerCommonAncestorsHunk guibg=#754a81")
-

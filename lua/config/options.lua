@@ -10,10 +10,6 @@ opt.winblend = 0
 opt.number = true
 opt.relativenumber = true
 
--- set Which key
--- local wk = require("which-key")
--- wk.register(mappings, opts)
-
 -- tabs & indentation
 opt.tabstop = 2 -- 2 spaces for tabs (prettier default)
 opt.shiftwidth = 2 -- 2 spaces for indent width
@@ -59,5 +55,5 @@ opt.foldlevel = 99
 -- Enable Neovim Spellchecking
 -- z= opens suggestions.
 -- zg => tells the spellchecking this is a good word.
-vim.opt.spelllang = "en_us"
-vim.opt.spell = false
+opt.spelllang = "en_us"
+opt.spell = false

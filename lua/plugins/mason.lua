@@ -1,51 +1,52 @@
 return {
-  "williamboman/mason.nvim",
-  dependencies = {
-    "williamboman/mason-lspconfig.nvim",
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
+
+  "mason-org/mason.nvim",
+  cmd = "Mason",
+  keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
+  build = ":MasonUpdate",
+  opts_extend = { "ensure_installed" },
+  opts = {
+    ensure_installed = {
+      "stylua",
+      "shfmt",
+      "bash-language-server",
+      "black",
+      "css-lsp",
+      "ember-language-server",
+      "eslint-lsp",
+      "eslint_d",
+      "glint",
+      "html-lsp",
+      "lua-language-server",
+      "prettier",
+      "rubocop",
+      "ruby-lsp",
+      "shfmt",
+      "stylua",
+      "typescript-language-server",
+    },
   },
-  config = function()
-    -- import mason
-    local mason = require("mason")
+  ---@param opts MasonSettings | {ensure_installed: string[]}
+  config = function(_, opts)
+    require("mason").setup(opts)
+    local mr = require("mason-registry")
+    mr:on("package:install:success", function()
+      vim.defer_fn(function()
+        -- trigger FileType event to possibly load this newly installed LSP server
+        require("lazy.core.handler.event").trigger({
+          event = "FileType",
+          buf = vim.api.nvim_get_current_buf(),
+        })
+      end, 100)
+    end)
 
-    -- import mason-lspconfig
-    local mason_lspconfig = require("mason-lspconfig")
-
-    local mason_tool_installer = require("mason-tool-installer")
-
-    -- enable mason and configure icons
-    mason.setup({
-      ui = {
-        icons = {
-          package_installed = "✓",
-          package_pending = "➜",
-          package_uninstalled = "✗",
-        },
-      },
-    })
-
-    mason_lspconfig.setup({
-      -- list of servers for mason to install
-      ensure_installed = {
-        "rubocop",
-        "pyright",
-        "lua_ls",
-        "eslint",
-        "html",
-        "ruby_lsp",
-        "ts_ls",
-        "html",
-        "bashls",
-        "cssls",
-      },
-    })
-
-    mason_tool_installer.setup({
-      ensure_installed = {
-        "prettier", -- prettier formatter
-        "stylua", -- lua formatter
-        "eslint_d",
-      },
-    })
+    mr.refresh(function()
+      for _, tool in ipairs(opts.ensure_installed) do
+        local p = mr.get_package(tool)
+        if not p:is_installed() then
+          p:install()
+        end
+      end
+    end)
   end,
 }

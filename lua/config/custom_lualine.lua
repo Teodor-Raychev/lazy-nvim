@@ -25,4 +25,3 @@ custom_horizon.command.a.bg = cmd
 require("lualine").setup({
   options = { theme = custom_horizon },
 })
-

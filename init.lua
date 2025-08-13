@@ -6,7 +6,7 @@ vim.g.mapleader = " "
 require("config.lazy")
 require("config.keymaps")
 require("config.options")
-require("config.commands")
+require("config.autocmds")
 require("config.custom_lualine")
 require("config.custom_git")
 require("config.lsp-config")
